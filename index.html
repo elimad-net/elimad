@@ -714,7 +714,7 @@
             </div>
 
             <div style="text-align: center;">
-              <a href="#contact" class="btn-primary" style="padding: 0.75rem 2rem;">
+              <a href="#contact" id="btnApplyConsulting" class="btn-primary" style="padding: 0.75rem 2rem;">
                 진단 결과 바탕으로 1:1 맞춤 컨설팅 받기
               </a>
             </div>
@@ -1436,5 +1436,45 @@
 
   <!-- Scripts -->
   <script src="scripts/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('btnApplyConsulting');
+      if (btn) {
+        btn.addEventListener('click', function() {
+          var company = document.getElementById('diagCompany').value || '미입력';
+          
+          var industrySel = document.getElementById('diagIndustry');
+          var industry = industrySel ? industrySel.options[industrySel.selectedIndex].text : '미입력';
+          
+          var adSel = document.getElementById('diagCurrentAd');
+          var ad = adSel ? adSel.options[adSel.selectedIndex].text : '미입력';
+          
+          var budgetSel = document.getElementById('diagBudget');
+          var budget = budgetSel ? budgetSel.options[budgetSel.selectedIndex].text : '미입력';
+          
+          var scoreEl = document.getElementById('resScoreNum');
+          var score = scoreEl ? scoreEl.innerText : '0점 / 100점';
+
+          var msg = "[AI 진단 결과 연동]\n" +
+                    "- 회사명: " + company + "\n" +
+                    "- 주요 업종: " + industry + "\n" +
+                    "- 현재 광고: " + ad + "\n" +
+                    "- 월간 예산: " + budget + "\n" +
+                    "- 진단 점수: " + score + "\n\n" +
+                    "위 진단 결과를 바탕으로 마케팅 상담을 요청합니다.";
+
+          var contactMsg = document.getElementById('contactMessage');
+          var contactCompany = document.getElementById('contactCompany');
+
+          if (contactMsg) {
+            contactMsg.value = msg;
+          }
+          if (contactCompany && company !== '미입력') {
+            contactCompany.value = company;
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
