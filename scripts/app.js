@@ -115,10 +115,14 @@ function initInfographicTabs() {
     btn.addEventListener('click', () => {
       const targetTab = btn.getAttribute('data-tab');
 
-      tabBtns.forEach(b => b.classList.remove('active'));
+      tabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
       tabContents.forEach(c => c.classList.remove('active'));
 
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
       const activeContent = document.getElementById(targetTab);
       if (activeContent) {
         activeContent.classList.add('active');
@@ -190,28 +194,27 @@ function initDiagnosticTool() {
     analyzeBtn.disabled = true;
     analyzeBtn.innerHTML = `
       <svg class="animate-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-linecap="round"></circle></svg>
-      AI 검색 알고리즘 시뮬레이션 분석 중...
+      AI 검색 준비도 모의 분석 중...
     `;
 
     setTimeout(() => {
       analyzeBtn.disabled = false;
       analyzeBtn.innerHTML = originalBtnText;
 
-      // Calculate dynamic simulated scores based on input
+      // Calculate illustrative simulation scores; this is not a live AI/search measurement.
       let baseScore = 28;
       if (currentMarketing === 'sns') baseScore = 42;
       if (currentMarketing === 'search_ads') baseScore = 38;
       if (currentMarketing === 'blog') baseScore = 48;
       if (currentMarketing === 'none') baseScore = 18;
 
-      const randomOffset = Math.floor(Math.random() * 10);
-      const finalScore = baseScore + randomOffset;
+      const finalScore = Math.min(100, baseScore + (industry ? 3 : 0) + (monthlyBudget === 'high' ? 4 : 0));
 
       document.getElementById('resCompanyName').innerText = companyName;
       document.getElementById('resScoreNum').innerText = `${finalScore}점 / 100점`;
       document.getElementById('resIndustryText').innerText = industry;
       
-      const citationRate = Math.min(94, Math.floor(finalScore * 0.45) + 12);
+      const citationRate = Math.min(80, Math.floor(finalScore * 0.45) + 12);
       document.getElementById('resCitationRate').innerText = `${citationRate}% (현재 상태)`;
       document.getElementById('resArchiveNeed').innerText = finalScore < 50 ? '월 60건 집중형 아카이빙 권장' : '월 30건 유지·확장형 아카이빙 권장';
       
@@ -386,8 +389,8 @@ function initAIChatbot() {
 
     if (q.includes('지자체') || q.includes('군') || q.includes('시') || q.includes('공공')) {
       return `<strong>지자체·공공기관 특화 아카이브</strong><br>
-      지역의 정책, 관광지, 농·특산물, 축제, 기업 유치 정보가 AI 검색에서 우선 추천되도록 아카이빙합니다.<br>
-      '1분 만에 이해하는 만화 설명'의 [지자체 아카이브] 탭을 확인해보세요!`;
+      정책·사업, 관광·축제, 농·특산물, 기업·투자, 복지·생활, 뉴스·성과 정보를 공식 출처 중심으로 정리하고 지속 관리합니다.<br>
+      '1분 만에 이해하는 만화 설명'의 [지자체·공공기관 아카이브] 탭에서 구성과 흐름을 확인해보세요.`;
     }
 
     if (q.includes('전화') || q.includes('연락') || q.includes('상담')) {
