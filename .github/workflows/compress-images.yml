@@ -1,0 +1,40 @@
+name: compress-images
+
+on:
+  pull_request:
+    paths:
+      - "**.png"
+      - "**.jpg"
+      - "**.jpeg"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
+
+      - name: Install optimizers
+        run: |
+          sudo apt-get update -y -qq
+          sudo apt-get install -y -qq oxipng jpegoptim
+          git ls-files '*.png' | xargs -r oxipng -o 2 --strip safe
+          git ls-files '*.jpg' '*.jpeg' | xargs -r jpegoptim --strip-all --max=82 --overwrite --quiet
+          git status --short
+          if [ -n "$(git status --short)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: compress images (oxipng/jpegoptim)"
+            git push
+          else
+            echo "No compressible images."
+          fi
