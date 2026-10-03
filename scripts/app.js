@@ -263,6 +263,8 @@ function initConsultationForm() {
 
     const name = document.getElementById('contactName').value.trim();
     const phone = document.getElementById('contactPhone').value.trim();
+    const emailEl = document.getElementById('contactEmail');
+    const email = emailEl ? emailEl.value.trim() : '';
     const company = document.getElementById('contactCompany').value.trim();
     const service = document.getElementById('contactService').value;
     const message = document.getElementById('contactMessage').value.trim();
@@ -282,6 +284,7 @@ function initConsultationForm() {
     const fd = new FormData();
     fd.append('entry.1932035991', name);
     fd.append('entry.2047112432', phone);
+    fd.append('entry.337534646', email);
     fd.append('entry.337006577', company);
     fd.append('entry.148703750', service);
     fd.append('entry.1251241703', message);
