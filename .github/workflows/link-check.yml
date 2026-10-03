@@ -24,7 +24,7 @@ jobs:
           args: >-
             --verbose
             --no-progress
-            --exclude-mail
+            --exclude 'mailto:'
             --exclude 'http://elimad.net'
             --exclude 'http://m.elimad.net'
             --exclude 'http://m.smartstore.naver.com'
