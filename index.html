@@ -237,26 +237,170 @@
 
         <!-- Tab Content 1: Overview -->
         <div class="tab-content active" id="tab-overview">
-          <div class="infographic-card">
-            <div class="infographic-header">
-              <div class="infographic-title-wrap">
-                <h3>AI 아카이브 마케팅 한눈에 보기 (Full Overview)</h3>
-                <p>소비자의 자연어 질문부터 AI 추천, 바이어 매칭까지 이어지는 10대 핵심 구조</p>
+          <!-- Hero Banner -->
+          <div class="ov-hero">
+            <div class="ov-hero-badge">✨ 1분 핵심 요약</div>
+            <h3 class="ov-hero-title">AI 아카이브 마케팅이란?</h3>
+            <p class="ov-hero-sub">광고를 <em>보여주는</em> 시대를 넘어,<br>AI가 <strong>찾아주는 정보</strong>를 축적하는 마케팅</p>
+            <div class="ov-hero-actions">
+              <a href="assets/docs/elim_ai_archive_comic.pdf" download class="tool-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                제안서 PDF 다운로드
+              </a>
+              <button class="tool-btn" data-zoom-img="assets/images/infographic_overview.png">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                인포그래픽 크게보기
+              </button>
+            </div>
+          </div>
+
+          <!-- 핵심 개념 2단 카드 -->
+          <div class="ov-grid-2">
+            <!-- 카드 1: 사람들이 AI에게 물어봄 -->
+            <div class="ov-card ov-card--blue">
+              <div class="ov-card-num">01</div>
+              <div class="ov-card-icon">🤖</div>
+              <h4>사람들이 이제 AI에게 묻습니다</h4>
+              <p>소비자는 검색창 대신 ChatGPT·Gemini·Perplexity에 자연어로 질문합니다.</p>
+              <div class="ov-ai-logos">
+                <span>ChatGPT</span><span>Google</span><span>Gemini</span><span>Perplexity</span>
               </div>
-              <div class="infographic-tools">
-                <button class="tool-btn" data-zoom-img="assets/images/infographic_overview.png">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                  고화질 확대보기
-                </button>
-                <a href="assets/docs/elim_ai_archive_comic.pdf" download class="tool-btn">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                  설명자료 PDF 다운로드
-                </a>
+              <div class="ov-chat-bubble">"한국에서 좋은 콜라겐 화장품 브랜드 추천해줘"</div>
+            </div>
+
+            <!-- 카드 2: AI가 정보를 찾는 곳 -->
+            <div class="ov-card ov-card--purple">
+              <div class="ov-card-num">02</div>
+              <div class="ov-card-icon">🔍</div>
+              <h4>AI는 어디서 정보를 가져올까요?</h4>
+              <p>AI는 인터넷상의 다양한 정보를 바탕으로 가장 신뢰할 수 있는 답을 제공합니다.</p>
+              <div class="ov-source-grid">
+                <div class="ov-source-item">🏢 회사 프로필</div>
+                <div class="ov-source-item">📦 상품 정보</div>
+                <div class="ov-source-item">📰 뉴스 기사</div>
+                <div class="ov-source-item">🏆 인증서·시험성적</div>
+                <div class="ov-source-item">⭐ 고객 후기</div>
+                <div class="ov-source-item">🎬 영상 콘텐츠</div>
               </div>
             </div>
-            <div class="infographic-img-container" data-zoom-img="assets/images/infographic_overview.png">
-              <img src="assets/images/infographic_overview.png" alt="AI 아카이브 마케팅 한눈에 보기 인포그래픽" class="infographic-img" loading="lazy">
+          </div>
+
+          <!-- 비교: 전통 광고 vs AI 아카이브 마케팅 -->
+          <div class="ov-compare">
+            <h4 class="ov-compare-title">03 &nbsp; 전통 광고와 무엇이 다른가요?</h4>
+            <div class="ov-compare-grid">
+              <div class="ov-compare-col ov-compare-col--old">
+                <div class="ov-compare-label">📺 전통 광고</div>
+                <ul>
+                  <li>💸 광고비 지출 → 노출</li>
+                  <li>❌ 광고 종료 시 효과 소멸</li>
+                  <li>😤 소비자가 광고를 회피</li>
+                  <li>📊 클릭률·도달률 지표</li>
+                </ul>
+              </div>
+              <div class="ov-compare-vs">VS</div>
+              <div class="ov-compare-col ov-compare-col--new">
+                <div class="ov-compare-label">🤖 AI 아카이브 마케팅</div>
+                <ul>
+                  <li>📚 정보 축적 → AI가 자동 인용</li>
+                  <li>✅ 아카이브 누적 → 장기 효과</li>
+                  <li>🎯 소비자가 직접 AI에 질문</li>
+                  <li>🌐 AI 추천·인용 지표</li>
+                </ul>
+              </div>
             </div>
+          </div>
+
+          <!-- AI 아카이브란 -->
+          <div class="ov-what">
+            <div class="ov-what-num">04</div>
+            <div class="ov-what-content">
+              <h4>AI 아카이브(Archive)란?</h4>
+              <p>기업의 정보를 <strong>디지털 정보 창고</strong>에 체계적으로 정리하고 콘텐츠로 만들어 인터넷에 지속적으로 저장하는 시스템입니다.</p>
+              <div class="ov-archive-items">
+                <div class="ov-archive-item">📂 회사 프로필</div>
+                <div class="ov-archive-item">🏷️ 상품 특징</div>
+                <div class="ov-archive-item">📋 인증 자료</div>
+                <div class="ov-archive-item">🏭 생산 시설</div>
+                <div class="ov-archive-item">📰 보도자료</div>
+                <div class="ov-archive-item">🎥 영상·미디어</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6단계 프로세스 -->
+          <div class="ov-process">
+            <h4 class="ov-process-title">🔄 엘림 AI 아카이브 마케팅 6단계 프로세스</h4>
+            <div class="ov-process-steps">
+              <div class="ov-step">
+                <div class="ov-step-num">1</div>
+                <div class="ov-step-icon">🔎</div>
+                <div class="ov-step-label">정보 진단</div>
+              </div>
+              <div class="ov-step-arrow">→</div>
+              <div class="ov-step">
+                <div class="ov-step-num">2</div>
+                <div class="ov-step-icon">✅</div>
+                <div class="ov-step-label">출처 검수</div>
+              </div>
+              <div class="ov-step-arrow">→</div>
+              <div class="ov-step">
+                <div class="ov-step-num">3</div>
+                <div class="ov-step-icon">✍️</div>
+                <div class="ov-step-label">콘텐츠 제작</div>
+              </div>
+              <div class="ov-step-arrow">→</div>
+              <div class="ov-step">
+                <div class="ov-step-num">4</div>
+                <div class="ov-step-icon">📂</div>
+                <div class="ov-step-label">디지털 아카이브</div>
+              </div>
+              <div class="ov-step-arrow">→</div>
+              <div class="ov-step">
+                <div class="ov-step-num">5</div>
+                <div class="ov-step-icon">🤖</div>
+                <div class="ov-step-label">검색 대응</div>
+              </div>
+              <div class="ov-step-arrow">→</div>
+              <div class="ov-step">
+                <div class="ov-step-num">6</div>
+                <div class="ov-step-icon">🔄</div>
+                <div class="ov-step-label">최신정보 관리</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SNS 뉴스 배포 포인트 -->
+          <div class="ov-grid-2">
+            <div class="ov-card ov-card--green">
+              <div class="ov-card-num">05</div>
+              <div class="ov-card-icon">📣</div>
+              <h4>SNS 뉴스 배포 (월 2회)</h4>
+              <p>아카이브 콘텐츠를 <strong>네이버 뉴스·카카오채널·인스타그램</strong> 등 주요 채널에 월 2회 배포하여 신뢰도를 높입니다.</p>
+              <ul class="ov-ul">
+                <li>📰 네이버 뉴스 배포</li>
+                <li>📱 카카오채널 공유</li>
+                <li>🖼️ 인스타그램 카드뉴스</li>
+              </ul>
+            </div>
+            <div class="ov-card ov-card--orange">
+              <div class="ov-card-num">06</div>
+              <div class="ov-card-icon">📈</div>
+              <h4>기대 효과</h4>
+              <p>단순 노출이 아닌, AI가 스스로 귀사 정보를 인용·추천하는 구조를 구축합니다.</p>
+              <ul class="ov-ul">
+                <li>🤖 AI 검색 인용 가능성 증가</li>
+                <li>🌐 포털 웹문서 상시 노출</li>
+                <li>🏆 브랜드 신뢰도·전문성 강화</li>
+                <li>🌍 30개국 바이어 연결 가능</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="ov-cta">
+            <p>AI 아카이브 마케팅에 대해 더 자세히 알고 싶으신가요?</p>
+            <a href="#contact" class="cta-btn-primary">무료 마케팅 상담 신청 →</a>
           </div>
         </div>
 
