@@ -1,4 +1,4 @@
-/**
+﻿/**
  * KOEIA 회원가입, 1:1 상담 예약, 무역 서식 다운로드 및 소식 관리 모듈
  */
 
@@ -239,10 +239,20 @@ function setupConsultingForm() {
     }
 
     const submitBtn = form.querySelector("button[type='submit']");
+    const origBtnHtml = submitBtn.innerHTML;
     submitBtn.disabled = true;
     submitBtn.innerHTML = "예약 접수 중...";
 
-    setTimeout(() => {
+    // Google Forms 연동: 응답 스프레드시트로 실제 전송 (키 불필요, no-cors)
+    const fd = new FormData();
+    fd.append("entry.1932035991", name);
+    fd.append("entry.2047112432", tel);
+    fd.append("entry.337006577", "");
+    fd.append("entry.148703750", subject);
+    fd.append("entry.1251241703", message);
+    const post = fetch("https://docs.google.com/forms/d/e/1FAIpQLSfpF_H1d_nSjZKSj6Q2D2G6QtTMoXFDv-rFYEG86kW8OUtSBg/formResponse", { method: "POST", mode: "no-cors", body: fd }).catch(() => {});
+    const timeout = new Promise((res) => setTimeout(res, 8000));
+    Promise.race([post, timeout]).finally(() => {
       submitBtn.disabled = false;
       submitBtn.innerHTML = "1:1 상담 예약 완료";
       closeConsultModal();
@@ -251,7 +261,8 @@ function setupConsultingForm() {
         window.showToast(`[${name}님] 1:1 수출입 상담 예약이 접수되었습니다.`, "success");
       }
       form.reset();
-    }, 800);
+      setTimeout(() => { submitBtn.innerHTML = origBtnHtml; }, 5000);
+    });
   });
 }
 
