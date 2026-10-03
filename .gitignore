@@ -1,0 +1,61 @@
+# 민감정보 / 로컬 작업물 — 절대 커밋 금지
+cookie*.txt
+cookies*.txt
+iweb_*.txt
+iweb_*.html
+*login*.html
+ssl_*.txt
+*_err.txt
+env.md
+*.log
+
+# 추출/덤프 부산물
+elimad_*.txt
+elimad_raw.html
+proposal_text.txt
+proposal.docx
+dump_pages.ps1
+parse*.ps1
+extract_*.ps1
+
+# 구 배포 스크립트 (git 전환 후 불필요 — 기록용 1부만 남기고 정리)
+# 필요 시 아래 주석 해제 후 선별 삭제
+# *.ps1
+
+# 발행 제외 초안
+page_*.html
+sub01_test.html
+out_test.html
+github_index.html
+skin_index.html
+jusarang45_index.html
+manager_index.html
+iweb_*.html
+after_login.html
+login_result.html
+test_*.html
+ssl_test.html
+
+# 대용량 원본 (GitHub 100MB 제한 / Pages 비대화 방지)
+videos/
+comic_assets/
+*.mp4
+*.mov
+*.psd
+*.ai
+
+# 루트 원본 이미지 (assets/ 최적본 사용)
+ai_archive_illustration.jpg
+hero_global_trade.jpg
+global_alliance_banner.jpg
+member_gelato.jpg
+member_nature.jpg
+president_portrait.jpg
+president_portrait.webp
+
+# OS / 에디터
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
