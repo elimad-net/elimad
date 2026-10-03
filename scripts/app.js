@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ELIM AD (엘림) - High-End AI Archive Marketing Platform
  * Core Interactive Application Logic
  */
@@ -273,10 +273,21 @@ function initConsultationForm() {
     }
 
     const submitBtn = form.querySelector('button[type="submit"]');
+    const origBtnHtml = submitBtn.innerHTML;
     submitBtn.disabled = true;
     submitBtn.innerHTML = '접수 처리 중...';
 
-    setTimeout(() => {
+    // Google Forms 연동: 응답 스프레드시트로 실제 전송 (키 불필요, no-cors)
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfpF_H1d_nSjZKSj6Q2D2G6QtTMoXFDv-rFYEG86kW8OUtSBg/formResponse';
+    const fd = new FormData();
+    fd.append('entry.1932035991', name);
+    fd.append('entry.2047112432', phone);
+    fd.append('entry.337006577', company);
+    fd.append('entry.148703750', service);
+    fd.append('entry.1251241703', message);
+    const post = fetch(GOOGLE_FORM_URL, { method: 'POST', mode: 'no-cors', body: fd }).catch(() => {});
+    const timeout = new Promise((res) => setTimeout(res, 8000));
+    Promise.race([post, timeout]).finally(() => {
       submitBtn.disabled = false;
       submitBtn.innerHTML = '상담 신청 완료';
       
@@ -298,7 +309,8 @@ function initConsultationForm() {
       `;
       document.body.appendChild(successModal);
       form.reset();
-    }, 900);
+      setTimeout(() => { submitBtn.innerHTML = origBtnHtml; }, 5000);
+    });
   });
 }
 
