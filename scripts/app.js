@@ -215,7 +215,7 @@ function initDiagnosticTool() {
       document.getElementById('resIndustryText').innerText = industry;
       
       const citationRate = Math.min(80, Math.floor(finalScore * 0.45) + 12);
-      document.getElementById('resCitationRate').innerText = `${citationRate}% (현재 상태)`;
+      document.getElementById('resCitationRate').innerText = `${citationRate}% (모의 참고값)`;
       document.getElementById('resArchiveNeed').innerText = finalScore < 50 ? '월 60건 집중형 아카이빙 권장' : '월 30건 유지·확장형 아카이빙 권장';
       
       resultPanel.style.display = 'block';
