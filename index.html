@@ -217,20 +217,20 @@
         </div>
 
         <!-- Tab Navigation -->
-        <div class="tab-nav">
-          <button class="tab-btn active" data-tab="tab-overview">
+        <div class="tab-nav" role="tablist" aria-label="AI 아카이브 서비스 유형">
+          <button class="tab-btn active" id="tab-overview-btn" role="tab" aria-selected="true" aria-controls="tab-overview" data-tab="tab-overview">
             <span>✨</span> 1분 한눈에 보기
           </button>
-          <button class="tab-btn" data-tab="tab-kr-30">
+          <button class="tab-btn" id="tab-kr-30-btn" role="tab" aria-selected="false" aria-controls="tab-kr-30" data-tab="tab-kr-30">
             <span>💼</span> 기업용 (월 30건 플랜)
           </button>
-          <button class="tab-btn" data-tab="tab-kr-60">
+          <button class="tab-btn" id="tab-kr-60-btn" role="tab" aria-selected="false" aria-controls="tab-kr-60" data-tab="tab-kr-60">
             <span>🚀</span> 기업용 (월 60건 프리미엄)
           </button>
-          <button class="tab-btn" data-tab="tab-local-gov">
+          <button class="tab-btn" id="tab-local-gov-btn" role="tab" aria-selected="false" aria-controls="tab-local-gov" data-tab="tab-local-gov">
             <span>🏛️</span> 지자체·공공기관 아카이브
           </button>
-          <button class="tab-btn" data-tab="tab-global-en">
+          <button class="tab-btn" id="tab-global-en-btn" role="tab" aria-selected="false" aria-controls="tab-global-en" data-tab="tab-global-en">
             <span>🌐</span> Global English 60
           </button>
         </div>
@@ -311,12 +311,13 @@
         </div>
 
         <!-- Tab Content 4: Local Government -->
-        <div class="tab-content" id="tab-local-gov">
+        <div class="tab-content" id="tab-local-gov" role="tabpanel" aria-labelledby="tab-local-gov-btn">
           <div class="infographic-card">
             <div class="infographic-header">
               <div class="infographic-title-wrap">
-                <h3>지자체 및 공공기관을 위한 AI 아카이브 마케팅</h3>
-                <p>관광 명소, 농·특산물, 축제, 기업 투자 유치, 군민 신뢰도 향상을 위한 공공 특화 모델</p>
+                <span class="local-archive-kicker">LOCAL INFORMATION ARCHIVE</span>
+                <h3>지자체·공공기관을 위한 AI 지역정보 아카이브</h3>
+                <p>정책·사업, 관광·축제, 농·특산물, 기업·투자, 복지·생활, 지역 뉴스와 성과를 체계적으로 기록하고 최신 정보로 관리하는 공공 특화 모델</p>
               </div>
               <div class="infographic-tools">
                 <button class="tool-btn" data-zoom-img="assets/images/infographic_local_gov.png">
@@ -326,7 +327,7 @@
               </div>
             </div>
             <div class="infographic-img-container" data-zoom-img="assets/images/infographic_local_gov.png">
-              <img src="assets/images/infographic_local_gov.png" alt="지자체 AI 아카이브 마케팅 포스터" class="infographic-img" loading="lazy">
+              <img src="assets/images/infographic_local_gov.png" alt="지자체·공공기관 AI 지역정보 아카이브 인포그래픽" class="infographic-img" loading="lazy">
             </div>
           </div>
         </div>
@@ -348,6 +349,27 @@
             </div>
             <div class="infographic-img-container" data-zoom-img="assets/images/infographic_en_60.png">
               <img src="assets/images/infographic_en_60.png" alt="Global English AI Archive Infographic" class="infographic-img" loading="lazy">
+            </div>
+          </div>
+
+          <div class="local-archive-upgrade" aria-label="AI 지역정보 아카이브 구성">
+            <div class="local-archive-upgrade-head">
+              <div>
+                <span class="local-archive-kicker">PUBLIC INFORMATION ASSET</span>
+                <h4>지역의 중요한 정보를 ‘찾을 수 있는 기록’으로 축적합니다.</h4>
+              </div>
+              <p>검색 결과의 노출·인용 여부를 보장하는 방식이 아니라, 공식 정보와 출처를 바탕으로 검색 대응을 고려한 구조화 콘텐츠를 지속적으로 축적·관리합니다.</p>
+            </div>
+            <div class="local-archive-facts">
+              <article><span>01</span><strong>정책·사업</strong><p>지원사업, 공고, 주요 정책과 추진 내용을 이해하기 쉽게 정리</p></article>
+              <article><span>02</span><strong>관광·축제</strong><p>관광 명소, 행사, 축제 일정과 방문 정보를 지속 업데이트</p></article>
+              <article><span>03</span><strong>농·특산물</strong><p>지역 대표 상품, 생산자·브랜드 정보와 구매·문의 정보 정리</p></article>
+              <article><span>04</span><strong>기업·투자</strong><p>산업단지, 기업지원, 투자환경과 지역 산업 정보를 축적</p></article>
+              <article><span>05</span><strong>복지·생활</strong><p>생활 지원, 복지 서비스, 주민 편의 정보를 분야별로 정리</p></article>
+              <article><span>06</span><strong>뉴스·성과</strong><p>주요 성과와 보도자료를 날짜·주제별로 기록하고 연결</p></article>
+            </div>
+            <div class="local-archive-flow">
+              <span>정보 진단</span><b>→</b><span>사실·출처 검수</span><b>→</b><span>콘텐츠 제작</span><b>→</b><span>디지털 아카이브</span><b>→</b><span>검색 대응</span><b>→</b><span>최신정보 관리</span>
             </div>
           </div>
         </div>
