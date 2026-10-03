@@ -1720,125 +1720,6 @@ ul, ol {
   margin: 0 auto;
 }
 
-/* --------------------------------------------------------------------------
-   Local Government AI Archive Upgrade
-   -------------------------------------------------------------------------- */
-.local-archive-kicker {
-  display: inline-block;
-  margin-bottom: 0.55rem;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: var(--accent-cyan);
-}
-
-.local-archive-upgrade {
-  margin-top: 1.25rem;
-  padding: 1.5rem;
-  border: 1px solid var(--border-subtle);
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(0, 242, 254, 0.055), rgba(255, 193, 7, 0.035));
-}
-
-.local-archive-upgrade-head {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 1.5rem;
-  align-items: end;
-  margin-bottom: 1.25rem;
-}
-
-.local-archive-upgrade-head h4 {
-  margin: 0;
-  font-size: 1.35rem;
-  line-height: 1.4;
-}
-
-.local-archive-upgrade-head p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.7;
-}
-
-.local-archive-facts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.8rem;
-}
-
-.local-archive-facts article {
-  min-height: 145px;
-  padding: 1rem;
-  border: 1px solid var(--border-subtle);
-  border-radius: 14px;
-  background: var(--bg-card);
-}
-
-.local-archive-facts article span {
-  display: block;
-  margin-bottom: 0.65rem;
-  color: var(--accent-cyan);
-  font-size: 0.72rem;
-  font-weight: 800;
-}
-
-.local-archive-facts article strong {
-  display: block;
-  margin-bottom: 0.4rem;
-  font-size: 0.98rem;
-}
-
-.local-archive-facts article p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 0.82rem;
-  line-height: 1.6;
-}
-
-.local-archive-flow {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  margin-top: 1.25rem;
-  padding-top: 1.1rem;
-  border-top: 1px dashed var(--border-subtle);
-}
-
-.local-archive-flow span {
-  padding: 0.45rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(0, 242, 254, 0.08);
-  color: var(--text-primary);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.local-archive-flow b {
-  color: var(--accent-cyan);
-}
-
-@media (max-width: 768px) {
-  .local-archive-upgrade {
-    padding: 1rem;
-  }
-  .local-archive-upgrade-head {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-  .local-archive-facts {
-    grid-template-columns: 1fr;
-  }
-  .local-archive-facts article {
-    min-height: auto;
-  }
-  .local-archive-flow {
-    justify-content: flex-start;
-  }
-}
-
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
   .hero-grid {
@@ -1917,3 +1798,317 @@ ul, ol {
     bottom: 1.5rem;
   }
 }
+
+/* ===================================================
+   1분 한눈에 보기 — Overview Tab Styles (ov-*)
+   =================================================== */
+
+/* Hero Banner */
+.ov-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.ov-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.ov-hero-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+.ov-hero-title {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.ov-hero-sub {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+.ov-hero-sub em { color: #f87171; font-style: normal; font-weight: 600; }
+.ov-hero-sub strong { color: #34d399; }
+.ov-hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* 2-column grid */
+.ov-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 680px) {
+  .ov-grid-2 { grid-template-columns: 1fr; }
+}
+
+/* Cards */
+.ov-card {
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ov-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+.ov-card--blue  { background: linear-gradient(145deg, #0f2744, #1e3a5f); }
+.ov-card--purple{ background: linear-gradient(145deg, #1e1440, #2d1b69); }
+.ov-card--green { background: linear-gradient(145deg, #052e16, #064e3b); }
+.ov-card--orange{ background: linear-gradient(145deg, #431407, #7c2d12); }
+
+.ov-card-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+}
+.ov-card-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.ov-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 0.5rem;
+}
+.ov-card p { font-size: 0.875rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem; }
+
+/* AI logos row */
+.ov-ai-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+.ov-ai-logos span {
+  background: rgba(99,102,241,0.15);
+  border: 1px solid rgba(99,102,241,0.3);
+  color: #a5b4fc;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+
+/* Chat bubble */
+.ov-chat-bubble {
+  background: rgba(255,255,255,0.05);
+  border-left: 3px solid #6366f1;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  font-style: italic;
+}
+
+/* Source grid */
+.ov-source-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+}
+.ov-source-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  color: #cbd5e1;
+}
+
+/* Compare section */
+.ov-compare {
+  background: rgba(15,23,42,0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.ov-compare-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 1rem;
+}
+.ov-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .ov-compare-grid { grid-template-columns: 1fr; }
+  .ov-compare-vs { text-align: center; }
+}
+.ov-compare-col {
+  border-radius: 12px;
+  padding: 1rem;
+}
+.ov-compare-col--old { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); }
+.ov-compare-col--new { background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.2); }
+.ov-compare-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #f1f5f9;
+}
+.ov-compare-col ul { list-style: none; padding: 0; margin: 0; }
+.ov-compare-col li { font-size: 0.82rem; color: #94a3b8; padding: 0.3rem 0; }
+.ov-compare-vs {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #475569;
+}
+
+/* What is archive section */
+.ov-what {
+  display: flex;
+  gap: 1.25rem;
+  background: linear-gradient(145deg, #0c1a2e, #1e293b);
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+.ov-what-num {
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(99,102,241,0.4);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 2.5rem;
+}
+.ov-what-content h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 0.5rem;
+}
+.ov-what-content p { font-size: 0.875rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem; }
+.ov-archive-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.ov-archive-item {
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.25);
+  color: #a5b4fc;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+}
+
+/* Process Steps */
+.ov-process {
+  background: rgba(15,23,42,0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.ov-process-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+.ov-process-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.ov-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border: 1px solid rgba(99,102,241,0.25);
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  min-width: 72px;
+  transition: transform 0.2s;
+}
+.ov-step:hover { transform: translateY(-2px); border-color: rgba(99,102,241,0.5); }
+.ov-step-num {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #6366f1;
+  letter-spacing: 0.05em;
+}
+.ov-step-icon { font-size: 1.35rem; }
+.ov-step-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-align: center;
+  line-height: 1.3;
+}
+.ov-step-arrow {
+  color: #475569;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+@media (max-width: 600px) {
+  .ov-step-arrow { display: none; }
+  .ov-process-steps { gap: 0.5rem; }
+}
+
+/* ov-ul */
+.ov-ul { list-style: none; padding: 0; margin: 0.75rem 0 0; }
+.ov-ul li {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.ov-ul li:last-child { border-bottom: none; }
+
+/* CTA block */
+.ov-cta {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1e1b4b, #0f172a);
+  border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 16px;
+  margin-top: 1.5rem;
+}
+.ov-cta p {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
